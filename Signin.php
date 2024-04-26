@@ -87,7 +87,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="Task2.php">Home </a>
         <a class="nav-item nav-link" href="AddBlog.php">Add Blog</a>
-        <a class="nav-item nav-link active" href="Signin.php">Login<span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="Review.php">Reviews</a>
+        <a class="nav-item nav-link active" href="#">Login<span class="sr-only">(current)</span></a>
       </div>
     </div>
   </nav>
@@ -112,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                       <div class="d-flex align-items-center mb-3 pb-1" >
                         <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                        <span class="h1 fw-bold mb-0">Logo</span>
+                        <span class="h1 fw-bold mb-0">Women Camping</span>
                       </div>
 
                       <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Register your account</h5>

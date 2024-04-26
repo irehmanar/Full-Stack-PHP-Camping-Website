@@ -74,12 +74,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <style>
     * {
-      overflow-x: hidden;
+      /* overflow-x: hidden; */
     }
   </style>
 </head>
 
 <body>
+
 <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 140px; z-index: 100;margin-top: 70px">
     <div class="toast mt-4" style="position: absolute; top: 0; right: 0; display: <?= $isDataSubmitted ? 'block' : 'none'; ?>;" data-autohide="false">
         <div class="toast-header">
@@ -103,8 +104,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="Task2.php">Home </a>
         <a class="nav-item nav-link  active" href="AddBlog.php">Add Blog<span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="Review.php">Reviews</a>
         <a class="nav-item nav-link" href="Signin.php">Login</a>
-        <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="#">My Blog</a>
+        <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="myBlog.php">My Blog</a>
         <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="logout.php">Log Out</a>
       </div>
     </div>
@@ -121,7 +123,7 @@ $(document).ready(function() {
 
 
 
-  <section class="container bg-dark w-50 text-light p-5 mx-auto " style="margin-bottom: 70px">
+  <section class="container bg-dark w-100 text-light p-5 mx-auto " style="margin-bottom: 70px">
     <form class="row g-3 p-3" action="AddBlog.php" method="POST">
 
       <div class="col-md-6">
@@ -132,10 +134,10 @@ $(document).ready(function() {
         <label for="validationDefaultAuthor" class="form-label text-light">Author</label>
         <input type="text" name="author" class="form-control" id="validationDefaultAuthor" placeholder="Author" required>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 h-100">
         <label for="inputBlog" class="form-label text-light">Blog Description</label>
         <div class="input-group">
-          <textarea class="form-control" id="inputBlog" name="blog_text" rows="4" column="5" required></textarea>
+          <textarea style="height: 200px;" class="form-control" id="inputBlog" name="blog_text" rows="14"  required></textarea>
         </div>
       </div>
 

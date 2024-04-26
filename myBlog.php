@@ -50,8 +50,9 @@
       <div class="navbar-nav">
         <a class="nav-item nav-link active" href="myBlog.php">Home <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="AddBlog.php">Add Blog</a>
+        <a class="nav-item nav-link" href="Review.php">Reviews</a>
         <a class="nav-item nav-link" href="Signin.php">Login</a>
-        <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="#">My Blog</a>
+        <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="myBlog.php">My Blog</a>
         <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="logout.php">Log Out</a>
 
       </div>
