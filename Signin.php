@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit; // Ensure no further code execution after the redirection
         } else {
             // Password is incorrect
-            echo "Invalid password";
+            $isError = True;
         }
     } else {
         // Email doesn't exist
@@ -88,7 +88,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a class="nav-item nav-link" href="Task2.php">Home </a>
         <a class="nav-item nav-link" href="AddBlog.php">Add Blog</a>
         <a class="nav-item nav-link" href="Review.php">Reviews</a>
-        <a class="nav-item nav-link active" href="#">Login<span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="#">Register<span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="myBlog.php">My Account</a>
+        <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="logout.php">Log Out</a>
       </div>
     </div>
   </nav>

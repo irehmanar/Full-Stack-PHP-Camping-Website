@@ -17,23 +17,23 @@ $isDataSubmitted = false; // Initialize the variable to false
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Retrieve form data
   $title = $_POST["title"] ?? ''; // Use null coalescing operator to avoid undefined index notices
-  $author = $_POST["author"] ?? '';
+  $Image = $_POST["Image"] ?? '';
   $blog_text = $_POST["blog_text"] ?? '';
 
 
   require_once 'connection.php';
 
+  $query3 = "SELECT User_ID FROM User WHERE Email = '$email'";
+  $result3 = mysqli_query($mysqli, $query3);
+  $row3 = mysqli_fetch_assoc($result3);
+  $userId3 = $row3['User_ID'];
+
   // Write a query to get users from the database
-  $query = "INSERT INTO blogs (likes, blogText, date, User_ID) VALUES (0, '$blog_text', CURDATE(), 1)";
+  $query = "INSERT INTO blogs (Picture, blogText, date, User_ID ,Title) VALUES ('$Image', '$blog_text', CURDATE(), '$userId3','$title')";
 
   // Execute the query
   $result = mysqli_query($mysqli, $query);
 
-
-  // Perform database operations
-  // Assuming you have already established a database connection
-
-  // Insert data into the BLOGS table
 
 
   // Execute the SQL statement
@@ -105,8 +105,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a class="nav-item nav-link" href="Task2.php">Home </a>
         <a class="nav-item nav-link  active" href="AddBlog.php">Add Blog<span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="Review.php">Reviews</a>
-        <a class="nav-item nav-link" href="Signin.php">Login</a>
-        <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="myBlog.php">My Blog</a>
+        <a class="nav-item nav-link" href="Signin.php">Register</a>
+        <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="myBlog.php">My Account</a>
         <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="logout.php">Log Out</a>
       </div>
     </div>
@@ -131,8 +131,8 @@ $(document).ready(function() {
         <input type="text" class="form-control" name="title" id="validationDefaultTitle" placeholder="Title" required>
       </div>
       <div class="col-md-6">
-        <label for="validationDefaultAuthor" class="form-label text-light">Author</label>
-        <input type="text" name="author" class="form-control" id="validationDefaultAuthor" placeholder="Author" required>
+        <label for="validationDefaultAuthor" class="form-label text-light">Image Source</label>
+        <input type="text" name="Image" class="form-control" id="validationDefaultAuthor" placeholder="Author" required>
       </div>
       <div class="col-md-12 h-100">
         <label for="inputBlog" class="form-label text-light">Blog Description</label>

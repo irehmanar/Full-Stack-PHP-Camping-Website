@@ -12,3 +12,4 @@ session_destroy();
 header("Location: Task2.php");
 exit;
 ?>
+

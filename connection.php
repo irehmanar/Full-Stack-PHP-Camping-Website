@@ -1,8 +1,8 @@
 <?php
 $databaseHost = 'localhost';
-$databaseName = 'camping';
+$databaseName = 'project';
 $databaseUsername = 'root';
-$databasePassword = "rehman4163";
+$databasePassword = "************";
 //add password here
 $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 

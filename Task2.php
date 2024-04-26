@@ -67,11 +67,11 @@ if (isset($_SESSION['username'])) {
     </button>
     <div class="collapse navbar-collapse justify-content-md-center" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="Task2.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="AddBlog.php">Add Blog</a>
         <a class="nav-item nav-link" href="Review.php">Reviews</a>
-        <a class="nav-item nav-link" href="Signin.php">Login</a>
-        <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="myBlog.php">My Blog</a>
+        <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="myBlog.php">My Account</a>
+        <a class="nav-item nav-link" href="Signin.php">Register</a>
         <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="logout.php">Log Out</a>
       </div>
     </div>
@@ -125,7 +125,7 @@ if (isset($_SESSION['username'])) {
   if (!empty($_GET["emailSearch"])) {
     $emailSearch = $_GET["emailSearch"] ?? '';
     echo '
-    <h1 class="mt-5 mb-4 text-center">Your Search Result1 </h1>  <div class="container">
+    <h1 class="mt-5 mb-4 text-center">Your Search Result </h1>  <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">';
     require_once 'connection.php'; // Include the file with MySQLi connection
     // Step 1: Retrieve User_ID based on the email
@@ -170,13 +170,15 @@ if (isset($_SESSION['username'])) {
       echo "Error: " . $query . "<br>" . mysqli_error($mysqli);
     }
     // Close the database connection
-    mysqli_close($mysqli);
-  } elseif (!empty($_GET["titleSearch"])) {
+    // mysqli_close($mysqli);
+  } 
+  
+  elseif (!empty($_GET["titleSearch"])) {
     // $emailSearch = $_GET["emailSearch"] ?? '';
     $titleSearch = $_GET["titleSearch"] ?? '';
     // $dateSearch = $_GET["dateSearch"] ?? '';
     echo '
-    <h1 class="mt-5 mb-4 text-center">Your Search Result2</h1>  <div class="container">
+    <h1 class="mt-5 mb-4 text-center">Your Search Result</h1>  <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">';
 
     require_once 'connection.php'; // Include the file with MySQLi connection
@@ -204,13 +206,18 @@ if (isset($_SESSION['username'])) {
     }
 
     // Close the database connection
-    mysqli_close($mysqli);
-  } elseif (!empty($_GET["dateSearch"])) {
+    // mysqli_close($mysqli);
+  } 
+  
+  
+  
+  
+  elseif (!empty($_GET["dateSearch"])) {
     // $emailSearch = $_GET["emailSearch"] ?? '';
     // $titleSearch = $_GET["titleSearch"] ?? '';
     $dateSearch = $_GET["dateSearch"] ?? '';
     echo '
-    <h1 class="mt-5 mb-4 text-center">Your Search Result3</h1>  <div class="container">
+    <h1 class="mt-5 mb-4 text-center">Your Search Result</h1>  <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">';
 
     require_once 'connection.php'; // Include the file with MySQLi connection
@@ -238,7 +245,7 @@ if (isset($_SESSION['username'])) {
     }
 
     // Close the database connection
-    mysqli_close($mysqli);
+    // mysqli_close($mysqli);
   }
 
 

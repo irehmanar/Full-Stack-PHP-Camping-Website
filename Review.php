@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark p-4">
-        <a class="navbar-brand" href="#">Women Camping</a>
+        <a class="navbar-brand" href="Task2.php">Women Camping</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -92,8 +92,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <a class="nav-item nav-link" href="Task2.php">Home </a>
                 <a class="nav-item nav-link" href="AddBlog.php">Add Blog</a>
                 <a class="nav-item nav-link active" href="#">Reviews</a>
-                <a class="nav-item nav-link" href="Signin.php">Login</a>
-                <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="myBlog.php">My Blog</a>
+                <a class="nav-item nav-link" href="Signin.php">Register</a>
+                <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="myBlog.php">My Account</a>
                 <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="logout.php">Log Out</a>
 
             </div>
@@ -201,7 +201,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <i class="fas fa-quote-left pe-2"></i>
                             ' . $blogRow['review'] . '
                         </p>
-                        <p class="dark-grey-text mt-4">
+                        <p class="dark-grey-text mt-4 font-italic fw-bold">
                             (' . $blogRow['name'] . ')
                         </p>
 
