@@ -230,9 +230,9 @@ exit;
               echo '
                 <div class="col">
                 <div class="card h-100">
-                  <img src="img-1.jpg" class="card-img-top" alt="Web 1" />
+                  <img src="' . $blogRow['Picture'] . '" class="card-img-top" alt="Web 1" />
                   <div class="card-body">
-                    <h5 class="card-title">' . $blogRow['likes'] . '</h5>
+                    <h5 class="card-title">' . $blogRow['Title'] . '</h5>
                     <p class="card-text">' . $blogRow['blogText'] . '</p>
                   </div>
                 </div>

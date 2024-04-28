@@ -149,9 +149,9 @@ if (isset($_SESSION['username'])) {
             echo '
                     <div class="col">
                     <div class="card h-100">
-                      <img src="img-1.jpg" class="card-img-top" alt="Web 1" />
+                      <img src="'. $blogRow['Picture'] .'" class="card-img-top" alt="Web 1" />
                       <div class="card-body">
-                        <h5 class="card-title">' . $blogRow['likes'] . '</h5>
+                        <h5 class="card-title">' . $blogRow['Title'] . '</h5>
                         <p class="card-text">' . $blogRow['blogText'] . '</p>
                       </div>
                     </div>
@@ -192,9 +192,9 @@ if (isset($_SESSION['username'])) {
         echo '
                     <div class="col">
                     <div class="card h-100">
-                      <img src="img-1.jpg" class="card-img-top" alt="Web 1" />
+                      <img src="'. $blogRow['Picture'] .'" class="card-img-top" alt="Web 1" />
                       <div class="card-body">
-                        <h5 class="card-title">' . $blogRow['likes'] . '</h5>
+                        <h5 class="card-title">' . $blogRow['Title'] . '</h5>
                         <p class="card-text">' . $blogRow['blogText'] . '</p>
                       </div>
                     </div>
@@ -205,16 +205,11 @@ if (isset($_SESSION['username'])) {
       echo "<h2 style='color:red';>No blog found.</h2>";
     }
 
-    // Close the database connection
-    // mysqli_close($mysqli);
   } 
   
-  
-  
-  
+    
+
   elseif (!empty($_GET["dateSearch"])) {
-    // $emailSearch = $_GET["emailSearch"] ?? '';
-    // $titleSearch = $_GET["titleSearch"] ?? '';
     $dateSearch = $_GET["dateSearch"] ?? '';
     echo '
     <h1 class="mt-5 mb-4 text-center">Your Search Result</h1>  <div class="container">
@@ -231,9 +226,9 @@ if (isset($_SESSION['username'])) {
         echo '
                     <div class="col">
                     <div class="card h-100">
-                      <img src="img-1.jpg" class="card-img-top" alt="Web 1" />
+                      <img src="'. $blogRow['Picture'] .'" class="card-img-top" alt="Web 1" />
                       <div class="card-body">
-                        <h5 class="card-title">' . $blogRow['likes'] . '</h5>
+                        <h5 class="card-title">' . $blogRow['Title'] . '</h5>
                         <p class="card-text">' . $blogRow['blogText'] . '</p>
                       </div>
                     </div>
@@ -243,33 +238,16 @@ if (isset($_SESSION['username'])) {
     } else {
       echo "<h2 style='color:red';>No blog found.</h2>";
     }
-
-    // Close the database connection
-    // mysqli_close($mysqli);
   }
-
-
-
-
-
-
-
   ?>
   </div>
   </div>
-
-
-
-
   <?php
-
   echo '
 <h1 class="mt-5 mb-4 text-center">Most Recent</h1>  
 <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">';
-
   require_once 'connection.php'; // Include the file with MySQLi connection
-
   // Step 2: Fetch the most recent 5 blogs
   $blogQuery = "SELECT * FROM BLOGS ORDER BY date DESC LIMIT 5";
   $blogResult = mysqli_query($mysqli, $blogQuery);
@@ -279,9 +257,9 @@ if (isset($_SESSION['username'])) {
       echo '
         <div class="col">
             <div class="card h-100">
-                <img src="img-1.jpg" class="card-img-top" alt="Web 1" />
+                <img src="'. $blogRow['Picture'].'" class="card-img-top" alt="Web 1" />
                 <div class="card-body">
-                    <h5 class="card-title">' . $blogRow['likes'] . '</h5>
+                    <h5 class="card-title">' . $blogRow['Title'] . '</h5>
                     <p class="card-text">' . $blogRow['blogText'] . '</p>
                 </div>
             </div>
@@ -299,22 +277,7 @@ if (isset($_SESSION['username'])) {
   </div>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <h1 class="mt-5 mb-4 text-center">Explore Some Journeys</h1>
-
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">

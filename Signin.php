@@ -89,8 +89,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a class="nav-item nav-link" href="AddBlog.php">Add Blog</a>
         <a class="nav-item nav-link" href="Review.php">Reviews</a>
         <a class="nav-item nav-link active" href="#">Register<span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="myBlog.php">My Account</a>
-        <a class="nav-item nav-link" style="display: <?= $isLoggedIn ? 'block' : 'none'; ?>;" href="logout.php">Log Out</a>
       </div>
     </div>
   </nav>
@@ -118,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <span class="h1 fw-bold mb-0">Women Camping</span>
                       </div>
 
-                      <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Register your account</h5>
+                      <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Login your account</h5>
                       <div data-mdb-input-init class="form-outline mb-4" >
 
                         <input type="email" id="email" name="email" class="form-control form-control-lg" style="color: <?= $isError ? 'red' : ''; ?>;" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>"/>

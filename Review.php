@@ -172,6 +172,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="row d-flex justify-content-center">
             <div class="col-md-10 col-xl-8 text-center">
                 <h3 class="mb-4">Testimonials</h3>
+
             </div>
         </div>
 
@@ -212,7 +213,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   ';
                 }
             } else {
-                echo "<h2 style='color:red';>No review found.</h2>";
+                echo "<div style='color:red';>No review found.</div>";
             }
 
             // Close the database connection

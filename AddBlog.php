@@ -18,18 +18,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Retrieve form data
   $title = $_POST["title"] ?? ''; // Use null coalescing operator to avoid undefined index notices
   $Image = $_POST["Image"] ?? '';
+  $mail = $_POST["mail"] ?? '';
   $blog_text = $_POST["blog_text"] ?? '';
 
 
   require_once 'connection.php';
 
-  $query3 = "SELECT User_ID FROM User WHERE Email = '$email'";
+  $query3 = "SELECT User_ID FROM User WHERE Email = '$mail'";
   $result3 = mysqli_query($mysqli, $query3);
   $row3 = mysqli_fetch_assoc($result3);
   $userId3 = $row3['User_ID'];
-
+  
   // Write a query to get users from the database
-  $query = "INSERT INTO blogs (Picture, blogText, date, User_ID ,Title) VALUES ('$Image', '$blog_text', CURDATE(), '$userId3','$title')";
+  $query = "INSERT INTO BLOGS (Picture, blogText, date, User_ID ,Title) VALUES ('$Image', '$blog_text', CURDATE(), '$userId3','$title')";
 
   // Execute the query
   $result = mysqli_query($mysqli, $query);
@@ -111,6 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
   </nav>
+  <h1 class="mb-4 text-center">Add New Blogs</h1>
   
   <script>
 $(document).ready(function() {
@@ -127,12 +129,16 @@ $(document).ready(function() {
     <form class="row g-3 p-3" action="AddBlog.php" method="POST">
 
       <div class="col-md-6">
+        <label for="validationDefaultTitle" class="form-label text-light">Enter your Email</label>
+        <input type="text" class="form-control" name="mail" id="validationDefaultTitle" placeholder="Enter your Email" required>
+      </div>
+      <div class="col-md-6">
         <label for="validationDefaultTitle" class="form-label text-light">Choose a title</label>
         <input type="text" class="form-control" name="title" id="validationDefaultTitle" placeholder="Title" required>
       </div>
       <div class="col-md-6">
         <label for="validationDefaultAuthor" class="form-label text-light">Image Source</label>
-        <input type="text" name="Image" class="form-control" id="validationDefaultAuthor" placeholder="Author" required>
+        <input type="text" name="Image" class="form-control" id="validationDefaultAuthor" placeholder="Image Source" required>
       </div>
       <div class="col-md-12 h-100">
         <label for="inputBlog" class="form-label text-light">Blog Description</label>

@@ -2,7 +2,7 @@
 $databaseHost = 'localhost';
 $databaseName = 'project';
 $databaseUsername = 'root';
-$databasePassword = "************";
+$databasePassword = "rehman4163";
 //add password here
 $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 
